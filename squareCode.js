@@ -33,44 +33,34 @@ const squareCode = function(message) {
         }
     
     }
-
        msgArr1 = []; 
        msgArr = [];
        l = 0;
        m = 0;
-        
- 
       // let c is for colum 
     for (let c = 0; c <= x; c++) {
       
       for (let i = 1; i < message1.length; i++) {
-  
         let count = 0;
-
         // loop through each key/value
         for(let key in message1[i]) {
-    
             ++count;
         }
 
         message1 = message1.filter(function( element ) {
           return element !== undefined;
        });
- 
        
         if (message1[i][c] !== undefined) {
           msgArr1.push(message1[i][c]);
           m++;
-          
           if (m === message1.length - 1) {
-   
             msgArr.push(msgArr1);
             msgArr.push('%');
             msgArr1 = [];
             m = 0;
             l++;
           } 
-        
         }
       } 
       if (m > 0) {
